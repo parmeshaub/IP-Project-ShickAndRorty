@@ -1,0 +1,46 @@
+body {
+  background-color: aquamarine;
+}
+
+h1 {
+  width: 100%;
+  bottom: 100;
+  left: 0;
+  text-align: center;
+  position: fixed;
+  line-height: 2;
+  text-decoration: none;
+  font-size: 40px;
+  font-style: oblique;
+  color: rgb(0, 0, 0);
+}
+
+h2 {
+  width: 100%;
+  bottom: 100;
+  left: 0;
+  text-align: center;
+  position: fixed;
+  line-height: 5;
+  text-decoration: none;
+  font-size: 40px;
+  font-style: oblique;
+  color: rgb(0, 0, 0);
+}
+nav .return a {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  position: fixed;
+  line-height: 2;
+  text-decoration: none;
+  font-size: 40px;
+  font-style: oblique;
+  color: rgb(0, 0, 0);
+}
+
+nav .return a:hover {
+  width: 100%;
+  font-weight: bold;
+}
