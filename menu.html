@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+    />
+    <title>Main Menu</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bubbles">
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 24"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+        <span style="--i: 22"></span>
+        <span style="--i: 25"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 26"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 28"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 24"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+        <span style="--i: 22"></span>
+        <span style="--i: 25"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 26"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 28"></span>
+      </div>
+    </div>
+    <div class="menu">
+      <a href="#" style="--clr: #ecf0f1"
+        ><span><h1>Dusk of Lies</h1></span><i></i
+      ></a>
+      <a href="start.html" style="--clr: #ffdfc1"><span>Start</span><i></i></a>
+      <button onclick="togglePopup()">
+        <a href="#" style="--clr: #e89995"><span>Options</span><i></i></a>
+      </button>
+      <a
+        href="https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwiiqLTs1_v8AhUzS3wKHY7_Di0QPAgI"
+        style="--clr: #8ffa72"
+        ><span>Quit</span><i></i
+      ></a>
+    </div>
+    <div class="popup" id="popup1">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+        <h1>Title</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit,
+          possimus cumque temporibus nam veritatis architecto in amet vel
+          quaerat facilis voluptatem blanditiis, deleniti tenetur odit aperiam
+          neque, praesentium distinctio quisquam?
+        </p>
+      </div>
+    </div>
+    <div class="screen">
+      <i class="fas fa-volume-mute fa-2x" id="sound"></i>
+    </div>
+    <audio id="audioClick"></audio>
+    <audio id="audioHover"></audio>
+    <audio
+      id="track"
+      src="./img/Roman Reigns - Head Of The Table (Entrance Theme).mp3"
+      loop
+    ></audio>
+  </body>
+  <script>
+    const track = document.getElementById("track");
+    const audioClick = document.getElementById("audioClick");
+    const audioHover = document.getElementById("audioHover");
+
+    sound.addEventListener("click", () => {
+      sound.classList.toggle("fa-volume-up");
+
+      if (track.paused) {
+        track.play();
+      } else {
+        track.pause();
+      }
+    });
+
+    function togglePopup() {
+      document.getElementById("popup1").classList.toggle("active");
+    }
+  </script>
+</html>
