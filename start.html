@@ -12,31 +12,69 @@
     <title>Loading into game</title>
     <style>
       body {
-        background-color: #806f1c;
+        background: #333;
         padding: 0;
         margin: 0;
-      }
-
-      #ContentContainer {
-        position: absolute;
-        top: 50px;
-        right: 100px;
-        bottom: 50px;
-        left: 100px;
-        border: 10px #3e3131 solid;
         overflow: hidden;
-        background: url(/img/sample_spritemap.png);
-        cursor: pointer;
       }
 
-      #Thing {
-        width: 50px;
+      .game-container canvas {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        image-rendering: pixelated;
+        border: black 3px solid;
+        transform: scale(3);
+      }
+
+      .game-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .character {
+        position: absolute;
         height: 50px;
-        background: rgb(138, 89, 50);
-        border-radius: 20%;
-        border: 5px rgb(255, 255, 255) solid;
-        transform: translate3d(50px, 50px, 0);
-        transition: transform 0.3s cubic-bezier(0, 0, 1, 1);
+        width: 50px;
+        border-radius: 80%;
+        background-color: red;
+      }
+
+      .menu-container {
+        position: absolute;
+        top: 70px;
+        right: 100px;
+        background-color: white;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+
+      .menu {
+        display: none;
+        background-color: lightgray;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        list-style: none;
+      }
+
+      .menu a {
+        text-decoration: none;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 15px;
+        font-weight: 200;
+      }
+
+      button {
+        background: transparent;
+        border: none !important;
       }
 
       .no-scroll-y {
@@ -365,6 +403,20 @@
     <div id="ContentContainer">
       <div id="Thing"></div>
     </div>
+    <div class="game-container">
+      <canvas class="game-canvas" width="352" height="198"></canvas>
+      <div class="game-area"></div>
+      <div class="character" id="character"></div>
+      <div class="menu-container">
+        <button id="menu-button">Show Menu</button>
+        <div class="menu" id="menu">
+          <a href="#"><p>Menu Item 1</p></a>
+          <a href="#"><p>Menu Item 2</p></a>
+          <a href="#"><p>Menu Item 3</p></a>
+          <button id="close-menu-button">Close Menu</button>
+        </div>
+      </div>
+    </div>
   </body>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -389,45 +441,51 @@
       }, 3000);
     });
 
-    var theThing = document.querySelector("#Thing");
-    var container = document.querySelector("#ContentContainer");
-
-    container.addEventListener("click", getClickPosition, false);
-
-    function getClickPosition(e) {
-      var parentPosition = getPosition(container);
-
-      var xPosition = e.clientX - parentPosition.x - theThing.offsetWidth / 2;
-      var yPosition = e.clientY - parentPosition.y - theThing.offsetHeight / 2;
-
-      var translate3dValue =
-        "translate3d(" + xPosition + "px," + yPosition + "px, 0)";
-      theThing.style.transform = translate3dValue;
-    }
-
-    function getPosition(el) {
-      var xPosition = 0;
-      var yPosition = 0;
-
-      while (el) {
-        if (el.tagName == "BODY") {
-          // deal with browser quirks with body/window/document and page scroll
-          var xScrollPos = el.scrollLeft || document.documentElement.scrollLeft;
-          var yScrollPos = el.scrollTop || document.documentElement.scrollTop;
-
-          xPosition += el.offsetLeft - xScrollPos + el.clientLeft;
-          yPosition += el.offsetTop - yScrollPos + el.clientTop;
-        } else {
-          xPosition += el.offsetLeft - el.scrollLeft + el.clientLeft;
-          yPosition += el.offsetTop - el.scrollTop + el.clientTop;
-        }
-
-        el = el.offsetParent;
+    class World {
+      constructor(config) {
+        this.element = config.element;
+        this.canvas = this.element.querySelector(".game-canvas");
+        this.ctx = this.canvas.getContext("2d");
       }
-      return {
-        x: xPosition,
-        y: yPosition,
-      };
+
+      init() {
+        const image = new Image();
+        image.onload = () => {
+          this.ctx.drawImage(image, 0, 0);
+        };
+        image.src = "/img/pixelbg.png";
+
+        const x = 1;
+        const y = 4;
+        const hero = new Image();
+        hero.onload = () => {
+          this.ctx.drawImage(hero, 0, 0, 32, 32, x * 32, y * 32, 32, 32);
+        };
+        hero.src = "/img/hero.png";
+      }
     }
+
+    const character = document.getElementById("character");
+    const gameContainer = document.querySelector(".game-container");
+    const gameArea = document.querySelector(".game-area");
+    const menuButton = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+    const closeMenuButton = document.getElementById("close-menu-button");
+
+    gameArea.addEventListener("click", (event) => {
+      const x = event.clientX - gameContainer.offsetLeft - 25;
+      const y = event.clientY - gameContainer.offsetTop - 25;
+      character.style.left = `${x}px`;
+      character.style.top = `${y}px`;
+    });
+
+    menuButton.addEventListener("click", () => {
+      menu.style.display = "block";
+    });
+
+    closeMenuButton.addEventListener("click", () => {
+      menu.style.display = "none";
+    });
   </script>
+  <script src="/init.js"></script>
 </html>
