@@ -38,14 +38,6 @@
         bottom: 0;
       }
 
-      .character {
-        position: absolute;
-        height: 50px;
-        width: 50px;
-        border-radius: 80%;
-        background-color: red;
-      }
-
       .menu-container {
         position: absolute;
         top: 70px;
@@ -75,6 +67,31 @@
       button {
         background: transparent;
         border: none !important;
+      }
+
+      .mini-game {
+        position: absolute;
+        top: 50%;
+        left: 120px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .btn {
+        text-decoration: none;
+        text-transform: uppercase;
+        background: rgb(0, 0, 0);
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        color: #ff0101;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: color 0.4s linear;
+      }
+
+      .btn:hover {
+        color: #ffffff;
       }
 
       .no-scroll-y {
@@ -400,13 +417,9 @@
         </div>
       </section>
     </div>
-    <div id="ContentContainer">
-      <div id="Thing"></div>
-    </div>
     <div class="game-container">
       <canvas class="game-canvas" width="352" height="198"></canvas>
       <div class="game-area"></div>
-      <div class="character" id="character"></div>
       <div class="menu-container">
         <button id="menu-button">Show Menu</button>
         <div class="menu" id="menu">
@@ -416,6 +429,9 @@
           <button id="close-menu-button">Close Menu</button>
         </div>
       </div>
+    </div>
+    <div class="mini-game">
+      <a href="minigame.html"><button class="btn">Search for clues</button></a>
     </div>
   </body>
 
@@ -446,6 +462,8 @@
         this.element = config.element;
         this.canvas = this.element.querySelector(".game-canvas");
         this.ctx = this.canvas.getContext("2d");
+        this.font = "14px sans-serif";
+        this.hasInput = false;
       }
 
       init() {
@@ -465,19 +483,11 @@
       }
     }
 
-    const character = document.getElementById("character");
     const gameContainer = document.querySelector(".game-container");
     const gameArea = document.querySelector(".game-area");
     const menuButton = document.getElementById("menu-button");
     const menu = document.getElementById("menu");
     const closeMenuButton = document.getElementById("close-menu-button");
-
-    gameArea.addEventListener("click", (event) => {
-      const x = event.clientX - gameContainer.offsetLeft - 25;
-      const y = event.clientY - gameContainer.offsetTop - 25;
-      character.style.left = `${x}px`;
-      character.style.top = `${y}px`;
-    });
 
     menuButton.addEventListener("click", () => {
       menu.style.display = "block";
