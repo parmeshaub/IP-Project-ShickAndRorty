@@ -520,9 +520,13 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url("img/detectiveRoom.jpg") no-repeat;
+    background-image: url("img/detectiveRoom.jpg") no-repeat;
     background-size: cover;
     background-position: center;
+  }
+
+  .parallax img {
+    display: none;
   }
 
   #title {
@@ -556,5 +560,35 @@ header {
 
   .sec p:hover {
     color: white;
+  }
+
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-container {
+    text-align: center;
+    position: static;
+    margin-top: -100px;
+    margin-left: 20px;
+  }
+
+  .button {
+    font-size: 18px;
+    padding: 8px 16px;
+    background-color: #7d46b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px #ffffff;
+    margin: 10px;
+  }
+
+  .button.locked {
+    background-color: #8b0000;
   }
 }
