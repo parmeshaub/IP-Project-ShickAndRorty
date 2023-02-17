@@ -1,0 +1,129 @@
+body {
+  background: #333;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.title-box {
+  width: 100%;
+  height: 25px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.square-box {
+  width: 700px;
+  height: 500px;
+  background-color: lightblue;
+  margin: 0;
+}
+
+.text-box {
+  width: 700px;
+  height: 250px;
+  background-color: lightgray;
+  margin: 0;
+  white-space: pre-line;
+  padding: 2%;
+}
+.side-box-container {
+  display: flex;
+  justify-content: center;
+}
+
+.side-box {
+  width: 450px;
+  height: 500px;
+  background-color: rgb(122, 60, 44);
+  margin: 0;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.side-box.suspects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-box.suspects .title {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: white;
+}
+
+.side-box.suspects .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.side-box.suspects button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+}
+
+.side-box.suspects .button-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.side-box.suspects .top-text {
+  font-size: 15px;
+  margin-top: 35px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.side-box.suspects .bottom-text {
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+}
+
+.side-box.suspects button img {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.input-box {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+}
+#text-input {
+  margin: 0 auto;
+  width: 50%;
+  font-size: larger;
+  text-align: center;
+}
+
+.side-box p {
+  font-size: 35px;
+}
+
+.side-box ul {
+  font-size: 25px;
+}

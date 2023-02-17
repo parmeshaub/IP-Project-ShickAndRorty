@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+section .row {
+  position: relative;
+  width: 100%;
+  top: -50%;
+  display: flex;
+  padding: 10px 0;
+  white-space: nowrap;
+  font-size: 100px;
+  transform: rotate(15deg);
+}
+
+i {
+  color: rgba(42, 7, 52, 1);
+  transition: 1s;
+  padding: 0 5px;
+  user-select: none;
+  cursor: pointer;
+}
+
+i:hover {
+  transition: 1s;
+  color: #9809c8;
+  text-shadow: 0 0 120px #113a5a;
+}
+
+section .row div {
+  animation: animate1 80s linear infinite;
+  animation-delay: -80s;
+}
+
+section .row div:nth-child(2) {
+  animation: animate2 80s linear infinite;
+  animation-delay: -40s;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+section .row:nth-child(even) div {
+  animation: animate3 80s linear infinite;
+  animation-delay: -80s;
+}
+
+section .row:nth-child(even) div:nth-child(2) {
+  animation: animate4 80s linear infinite;
+  animation-delay: -40s;
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.welcome h1 {
+  text-align: center;
+  position: relative;
+  padding: 3px;
+  left: 20px;
+  justify-content: center;
+  font-size: 7em;
+  font-weight: 300;
+  color: rgb(220, 179, 230);
+}
+
+button a {
+  text-decoration: none;
+  font-size: 2em;
+  color: rgb(220, 179, 230);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.welcome button {
+  width: 300px;
+  height: 100px;
+  background: transparent;
+  border: 3px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 0.5s;
+}
+
+.welcome button:hover {
+  background: rgb(84, 14, 82);
+}
+
+@media screen and (max-width: 540px) {
+  section .row {
+    top: 0%;
+    font-size: 30px;
+  }
+
+  i {
+    font-size: 60px;
+  }
+
+  .welcome h1 {
+    font-size: 5em;
+  }
+
+  button a {
+    font-size: 1.5em;
+  }
+
+  .welcome button {
+    width: 200px;
+    height: 70px;
+    font-size: 0.8em;
+    margin-left: 20px;
+  }
+}

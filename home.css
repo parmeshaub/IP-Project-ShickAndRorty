@@ -1,0 +1,560 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+  transform-origin: right;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("img/detectiveRoom.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#title {
+  position: absolute;
+  font-size: 5em;
+  color: #1b283a;
+  text-shadow: 2px 4px 5px #f9f9f9;
+}
+
+.parallax img {
+  position: absolute;
+  top: 10;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.parallax img#gate_left {
+  transform: translateX(-282px);
+}
+
+.parallax img#gate_right {
+  transform: translateX(305px);
+}
+
+.sec {
+  position: relative;
+  background: linear-gradient(#020912, #021d35);
+  padding: 40px 100px;
+}
+
+.sec h2 {
+  font-size: 45px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sec p {
+  padding: 50px;
+  font-size: 25px;
+  color: #e8e5e5;
+  font-weight: 200;
+  text-align: justify;
+  transition: color 0.5s ease;
+}
+
+.sec p:hover {
+  color: white;
+}
+
+.gameLaunch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#0f0c29, #281a3c);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  padding: 80px 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 180px;
+  background: #ffffff;
+  transition: 0.5s;
+}
+
+.card:hover {
+  height: 450px;
+}
+
+.card .lines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#3f0f71, #490a68);
+  overflow: hidden;
+}
+
+.card .lines::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 120px;
+  background: linear-gradient(
+    transparent,
+    #d745ff,
+    #d745ff,
+    #d745ff,
+    transparent
+  );
+  animation: animate 4s linear infinite;
+  animation-play-state: paused;
+}
+
+.card:hover .lines::before {
+  animation-play-state: running;
+}
+
+.card .lines::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #340a49;
+}
+
+.card .imgbox {
+  background: #370448;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translateX(-50%);
+  transition: 0.5s;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover .imgbox {
+  top: 25px;
+  width: 250px;
+  height: 250px;
+}
+
+.card .imgbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    transparent,
+    #ff00bb,
+    #ff00bb,
+    #ff00bb,
+    transparent
+  );
+  animation: animate2 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.card:hover .imgbox::before {
+  animation-play-state: running;
+}
+
+.card .imgbox::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #2d0438;
+}
+
+.card .imgbox img {
+  position: absolute;
+  z-index: 1;
+  filter: invert(0.6);
+  opacity: 0.05;
+  transition: 0.5s;
+}
+
+.card:hover .imgbox img {
+  opacity: 1;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.card .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.card .content .details {
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateY(80px);
+}
+
+.card:hover .content .details {
+  transform: translateY(0px);
+}
+
+.card .content .details h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #d956fd;
+  line-height: 1.2em;
+}
+
+.card .content .details p {
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card .content .details a {
+  display: inline-block;
+  padding: 8px;
+  background: #c145ff;
+  color: #ffffff;
+  margin-top: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.card:hover .content .details p,
+.card:hover .content .details a {
+  opacity: 1;
+}
+
+.modelsec {
+  margin: 0;
+  padding: 0;
+}
+
+.container1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.picture-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border: 10px solid black;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px #888888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sketchfab-embed-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: linear-gradient(to bottom, #0d2049, #35185e);
+  animation: background-animation 30s ease infinite;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  text-align: center;
+  position: absolute;
+  left: 540px;
+  top: 2600px;
+}
+
+.button {
+  font-size: 24px;
+  padding: 10px 20px;
+  background-color: #7d46b4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px #ffffff;
+  margin: 250px 10px;
+}
+
+.button.locked {
+  background-color: #8b0000;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.page-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 1s;
+  transform: translateX(0) rotateY(0deg);
+}
+
+.page-transition.outgoing {
+  transform: translateX(100%) rotateY(-90deg);
+}
+
+.page-transition.incoming {
+  transform: translateX(-100%) rotateY(90deg);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+
+.grid-item {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.sketchfab-embed-wrapper {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+}
+
+.sketchfab-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 540px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    color: #fff;
+    user-select: none;
+  }
+
+  .navigation a {
+    position: relative;
+    font-size: 0.3em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+  }
+
+  .navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transform-origin: right;
+  }
+
+  .navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("img/detectiveRoom.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #title {
+    position: absolute;
+    font-size: 2.5em;
+    color: #1b283a;
+    text-shadow: 2px 4px 5px #f9f9f9;
+  }
+
+  .sec {
+    position: relative;
+    background: linear-gradient(#020912, #021d35);
+    padding: 40px 100px;
+  }
+
+  .sec h2 {
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .sec p {
+    padding: 50px;
+    font-size: 15px;
+    color: #e8e5e5;
+    font-weight: 200;
+    text-align: justify;
+    transition: color 0.5s ease;
+  }
+
+  .sec p:hover {
+    color: white;
+  }
+}

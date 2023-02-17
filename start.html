@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <script src="script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="start.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+    />
+    <title>Loading into game</title>
+    <style>
+
+    </style>
+  </head>
+
+  <body id="page-top">
+    <div id="preloader-body" class="no-scroll-y">
+      <section id="preloader-section">
+        <div id="preloader">
+          <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+              <div class="spinner"></div>
+
+              <div class="txt-loading">
+                <span data-text-preloader="D" class="letters-loading">D</span>
+                <span data-text-preloader="U" class="letters-loading">U</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+                <span data-text-preloader="K" class="letters-loading">K</span>
+                <span data-text-preloader="OF" class="letters-loading">OF</span>
+                <span data-text-preloader="L" class="letters-loading">L</span>
+                <span data-text-preloader="I" class="letters-loading">I</span>
+                <span data-text-preloader="E" class="letters-loading">E</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+              </div>
+            </div>
+
+            <div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      setTimeout(function () {
+        $("#ctn-preloader").addClass("loaded");
+
+        $("#preloader-body").removeClass("no-scroll-y");
+
+        if ($("#ctn-preloader").hasClass("loaded")) {
+          $("#preloader")
+            .delay(1000)
+            .queue(function () {
+              $(this).remove();
+
+              document
+                .getElementById("page-top")
+                .scrollIntoView({ behavior: "smooth" });
+                window.location.replace("game.html");
+            });
+        }
+      }, 3000);
+    });
+  </script>
+  
+</html>

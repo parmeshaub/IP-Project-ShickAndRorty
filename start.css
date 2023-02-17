@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  background: #333;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game-container canvas {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  image-rendering: pixelated;
+  border: black 3px solid;
+  transform: scale(3);
+}
+
+.game-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.menu-container {
+  position: absolute;
+  top: 70px;
+  right: 100px;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.menu {
+  display: none;
+  background-color: lightgray;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+button {
+  background: transparent;
+  border: none !important;
+}
+
+.mini-game {
+  position: absolute;
+  top: 50%;
+  left: 120px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  background: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #ff0101;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.4s linear;
+}
+
+.btn:hover {
+  color: #ffffff;
+}
+
+.no-scroll-y {
+  overflow-y: hidden;
+}
+
+#preloader-section {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ctn-preloader {
+  -webkit-box-align: center;
+  align-items: center;
+
+  cursor: none;
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.ctn-preloader .animation-preloader {
+  position: absolute;
+  z-index: 100;
+}
+
+.ctn-preloader .animation-preloader .spinner {
+  -webkit-animation: spinner 1s infinite linear;
+  animation: spinner 1s infinite linear;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  height: 9em;
+  margin: 0 auto 3.5em auto;
+  width: 9em;
+}
+
+.ctn-preloader .animation-preloader .txt-loading {
+  font: bold 5em "Montserrat", sans-serif;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
+  -webkit-animation: letters-loading 4s infinite;
+  animation: letters-loading 4s infinite;
+  color: #ffffff;
+  content: attr(data-text-preloader);
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading {
+  color: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(2):before {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(3):before {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(4):before {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(5):before {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(6):before {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(7):before {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(8):before {
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(9):before {
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(10):before {
+  -webkit-animation-delay: 1.8s;
+  animation-delay: 1.8s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(11):before {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(12):before {
+  -webkit-animation-delay: 2.2s;
+  animation-delay: 2.2s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(13):before {
+  -webkit-animation-delay: 2.4s;
+  animation-delay: 2.4s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(14):before {
+  -webkit-animation-delay: 2.6s;
+  animation-delay: 2.6s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(15):before {
+  -webkit-animation-delay: 2.8s;
+  animation-delay: 2.8s;
+}
+
+.ctn-preloader
+  .animation-preloader
+  .txt-loading
+  .letters-loading:nth-child(16):before {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.ctn-preloader .loader-section {
+  background-color: #000000;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: calc(50% + 1px);
+}
+
+.ctn-preloader .loader-section.section-left {
+  left: 0;
+}
+
+.ctn-preloader .loader-section.section-right {
+  right: 0;
+}
+
+.loaded .animation-preloader {
+  opacity: 0;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.loaded .loader-section.section-left {
+  -webkit-transform: translateX(-101%);
+  transform: translateX(-101%);
+  -webkit-transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2);
+  transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2);
+}
+
+.loaded .loader-section.section-right {
+  -webkit-transform: translateX(101%);
+  transform: translateX(101%);
+  -webkit-transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2);
+  transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2);
+}
+
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spinner {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  25%,
+  50% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+@keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  25%,
+  50% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ctn-preloader .animation-preloader .spinner {
+    height: 8em;
+    width: 8em;
+  }
+
+  .ctn-preloader .animation-preloader .txt-loading {
+    font: bold 3.5em "Montserrat", sans-serif;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ctn-preloader .animation-preloader .spinner {
+    height: 7em;
+    width: 7em;
+  }
+
+  .ctn-preloader .animation-preloader .txt-loading {
+    font: bold 2em "Montserrat", sans-serif;
+  }
+}
