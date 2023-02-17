@@ -6,6 +6,36 @@ Shaun and Reynard's IP Project
 
 Our IP project name for this assignment is called Shick & Rorty. Our project is a text-based adventure game (detective theme), the title of the website and game is called Dusk Of Lies. To have an introduction on what it means, "Dusk of Lies" is a gripping text-based detective game that immerses players in a dark and complex world of crime and deception. Set in a city shrouded in shadows, players take on the role of a seasoned detective tasked with solving a series of high-stakes cases that are shrouded in secrecy and lies. We have made sure that the login/register API system and design works and can connect to the webpage, we have made a 3D model rewarding system connected to the game with its API system and we have ensured that the design is well developed and not too complex and confusing to use.
 
+## Features
+
+1. A welcome page with animated background, in which there is Please proceed button that will guide you to the login/register page.
+
+2. A login/register page with animated backgrounds. It has switch page between the login and register of their own respective page.
+
+3. Once the login and register is done, the API system will detect whether it is successful or not. If it is successful it will send you to the home page of the website.
+
+4. The website has four sections, "Home" "About", "Game" and "Exclusives" section.
+
+5. The website has a parallax background scrolling animation(only desktop version, not in mobile).
+
+6. The "Game" section has a unique animated border launch button for the game.
+
+7. The "Exclusives" section has a picture frame with 3D models implemented inside of it, with 3 buttons underneath that when you gain enough points playing the game, you can then unlock it.
+
+8. For launching game part, after you launch the game, it will take you to the game.
+
+9. The game and its gameplay:
+
+- The player can access 3 rooms.
+- There will be 3 places, an office rooom, interrogation room and the crime scene.
+- In each of the rooms mentioned, there are actions you can do.
+- In the interrogation room, you can interrogate your suspects and they will give you some information before getting angry and not talk.
+- In the crime scene, you can interview witnesses and collect evidence.
+- In the office room, you can review evidences and accuse someone when you have enough evidence.
+- There is a random suspect generator that generates the names, appearance and likes of a suspect.
+- The evidence will also be based on the suspect likes.
+- When the player wins, they will get a certain number of points and with enough points they can claim models from the webpage.
+
 ## Technologies Used
 
 In order for us to build our websites and games we used a lot of tools which helped me to make it possible:
