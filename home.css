@@ -620,4 +620,33 @@ header {
   .button.locked {
     background-color: #8b0000;
   }
+
+  .button.unlocked {
+    background-color: rgb(23, 209, 23);
+  }
+
+  .point-system-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .point-button {
+    font-size: 18px;
+    padding: 8px 16px;
+    background-color: #7d46b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px #ffffff;
+    margin: 10px;
+  }
+
+  .point-button:hover {
+    background-color: #5c347f;
+  }
+
+  .button.green {
+    background-color: #4caf50;
+  }
 }
