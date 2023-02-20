@@ -2,11 +2,16 @@ const pointButton = document.querySelector(".point-button");
 const pointDisplay = document.getElementById("points");
 const buttons = document.querySelectorAll(".button");
 const buttonContainer = document.querySelector(".button-container");
+const button01 = document.getElementById("button1");
 const sketchfabEmbedWrapper = document.querySelector(
   ".sketchfab-embed-wrapper"
 );
 
-let challengeCompleted = true; // Global variable to track if challenge is completed
+button01.addEventListener("click", function () {
+  button01.classList.toggle("green");
+});
+
+let challengeCompleted = false; // Global variable to track if challenge is completed
 
 buttons.forEach((button) => {
   button.addEventListener("click", function () {
