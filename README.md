@@ -68,10 +68,5 @@ https://uigradients.com/
 https://ionic.io/ionicons
 
 https://www.youtube.com/@OnlineTutorialsYT (Huge shoutout to this youtube channel for all the amazing work and amazing guidances)
-
 https://www.youtube.com/watch?v=mxHoPYFsTuk
-https://www.youtube.com/watch?v=1wfeqDyMUx4&t=276s
 https://www.youtube.com/watch?v=p1GmFCGuVjw&t=1399s
-https://www.youtube.com/watch?v=JDn6OAMnJwQ&t=327s
-https://www.youtube.com/watch?v=Lcih8lCY19k&t=896s
-https://www.youtube.com/watch?v=b0Khk1vGumA&t=577s
