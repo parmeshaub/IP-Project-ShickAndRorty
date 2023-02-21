@@ -6,7 +6,7 @@
 
 body {
   min-height: 100vh;
-  background: #030529;
+  background: linear-gradient(#04041f, #140235);
 }
 
 .container {
